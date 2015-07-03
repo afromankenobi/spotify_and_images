@@ -1,28 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a little project to show some things like:
 
-Things you may want to cover:
+* Image treatment with Carrierwave
+* Basic Api consuming with Httparty (From Spotify)
+* Save objects, nested forms, and classic Rails stuff
 
-* Ruby version
+To run it:
 
-* System dependencies
+* Clone it
 
-* Configuration
+* `cd path_to_project`
 
-* Database creation
+* `bundle install`
 
-* Database initialization
+* `rake db:migrate`
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* `rails s`

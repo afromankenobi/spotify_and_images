@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @song.name %>
+</p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @song.album %>
+</p>
+
+<p>
+  <strong>Popularity:</strong>
+  <%= @song.popularity %>
+</p>
+
+<% @song.images.each do |image| %>
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag(image.data_url, size: '100x100') %>
+  </p>
+<% end -%>
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back', songs_path %>

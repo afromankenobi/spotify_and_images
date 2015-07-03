@@ -1,0 +1,33 @@
+<%= form_for(@song, html: {multiple: true }) do |f| %>
+  <% if @song.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@song.errors.count, "error") %> prohibited this song from being saved:</h2>
+
+      <ul>
+      <% @song.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :album %><br>
+    <%= f.text_field :album %>
+  </div>
+  <div class="field">
+    <%= f.label :popularity %><br>
+    <%= f.text_field :popularity %>
+  </div>
+  <%= f.fields_for :images do |builder| %>
+    <%= render "images_fields", :f => builder %>
+  <% end %>
+  <%= link_to_add_fields "Add images", f, :images %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

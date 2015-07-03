@@ -1,0 +1,9 @@
+<h1>Search songs on spotify</h1>
+<%= form_tag(search_results_path, method: 'get') do %>
+  <%= label_tag :search %><br />
+  <%= text_field_tag :search %>
+  <br />
+  <%= submit_tag "Buscar", :disable_with => "Please wait..." %>
+<% end %>
+<h2>Or edit the existing songs</h2>
+<%= link_to "See songs", songs_path %>

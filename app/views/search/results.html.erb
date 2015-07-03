@@ -1,0 +1,24 @@
+<h4>Our search:</h4>
+<p>select some songs to save in the list</p>
+<%= form_tag(:action => "add_songs", html: {:class => "form"}) do %>
+  <table>
+    <tr>
+      <th>add to songs?</th>
+      <th>artist</th>
+      <th>name</th>
+      <th>popularity</th>
+    </tr>
+    <% @results.each_with_index do |item, i| %>
+      <tr>
+        <td><%= check_box_tag "songs[][save]" %></td>
+        <td><%= item["artist"]%> <%= hidden_field_tag "songs[][artist]", item["artist"] %></td>
+        <td><%= item["track"] %>  <%= hidden_field_tag "songs[][name]", item["track"]  %></td>
+        <td><%= item["popularity"] %>  <%= hidden_field_tag "songs[][popularity]", item["popularity"]  %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= submit_tag "save songs to the list", :disable_with => 'saving...' %>
+<% end %>
+<br/>
+
+<%= link_to 'back', root_path %>
